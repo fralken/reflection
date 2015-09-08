@@ -53,7 +53,7 @@ object CaseClass {
       case (p, i) =>
         if (!p.isParamWithDefault) None
         else {
-          val getterName = TermName("apply$default$" + (i + 1))
+          val getterName = TermName(s"apply$$default$$${i + 1}")
           Some(q"${p.name.toString} -> $companionSym.$getterName")
         }
     }
